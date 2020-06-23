@@ -14,7 +14,7 @@ class CubeMaster {
 
     raycast() {
         this.raycaster.setFromCamera(mouse, camera)
-        var intersects = this.raycaster.intersectObjects(scene.children, true)
+        var intersects = this.raycaster.intersectObjects(this.get_current_three_scene().children, true)
         var saveClickBox = null;
         var clickBoxes = this.current_scene.getClickBoxes()
         if (intersects.length > 0) {
@@ -22,8 +22,6 @@ class CubeMaster {
                 let clickBox = clickBoxes[i]
                 if (clickBox == null)
                     continue
-                if (this.scene_level==1)
-                    console.log(i+':'+clickBox)
                 if (clickBox.contains(intersects[0].object)) {
                     clickBox.start_clip()
                     saveClickBox = clickBox
