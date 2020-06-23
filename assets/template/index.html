@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+
+        <script src="/js/mb-helper.js"></script>
+        <script src="/js/mb-outline.js"></script>
+        <script src="/js/state-machine.min.js"></script>
+        
+        <!-- TODO Replace with three.min.js -->
+        <script src="/js/three.js"></script>
+        <script src="/js/CSS3DRenderer.js"></script>
+        <script src="/js/OrbitControls.js"></script>
+        <script src="/js/mb-mindscene.js"></script>
+        <script src="/js/mb-mindbox6.js"></script>
+        <script src="/js/mb-mindbox24.js"></script>
+        <script src="/js/mb-mindbox54.js"></script>
+        <script src="/js/mb-mindtile.js"></script>
+        <script src="/js/mb-fittext.js"></script>
+        <script src="/js/mb-guidancebox.js"></script>
+        <script src="/js/mb-breadcrumb.js"></script>
+        <script src="/js/mb-cubemaster.js"></script>
+        <script src="/js/mb-clickbox.js"></script>
+        <script src="/js/tween.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var wh = 2001, wh_guide = 100
+            var clock
+            var camera
+            var renderer
+            var controls
+            var scene
+            var box
+            var mouse = new THREE.Vector2(0, 0)
+            var fittext
+            var zoomFactor = 0
+
+            let outline_json_raw = {{{mnemoboid_outline_json}}}.contents
+
+            function convert_json(outline_json_raw) {
+                let outline_json = []
+                outline_json_raw.forEach(item => outline_json.push(item))
+                return outline_json
+            }
+
+            function init() {
+                console.log("INIT!")
+
+                const outline_json = convert_json(outline_json_raw) 
+                clock = new THREE.Clock()
+
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000)
+                camera.rotation.order = 'YZX'
+                camera.position.set(200, 0, 0)
+                camera.lookAt(-1, 0, 0)
+                
+                renderer = new THREE.CSS3DRenderer()
+                renderer.setSize(window.innerWidth, window.innerHeight)
+                document.body.appendChild(renderer.domElement)
+
+                const resizer_id = "hidden-resizer"
+                add_hidden_resizer(resizer_id)
+                fittext = new Fittext(resizer_id)
+                
+                controls = new THREE.OrbitControls(camera, renderer.domElement)
+                //controls.addEventListener('change', renderer)
+                controls.minDistance = -1000
+                controls.maxDistance = wh/2*.95
+                controls.zoomSpeed = 4
+                //controls.target.set( 0, 0, 0 )
+                
+                window.addEventListener("keydown", keydown, false);
+                window.addEventListener('resize', onWindowResize, false);
+                window.addEventListener("mousemove", mousemove, false);
+                window.addEventListener("click", click, false);
+
+                build_scenes(outline_json)
+                
+                render()
+            }
+            function render() {
+                cubeMaster.raycast()
+                var delta = clock.getDelta()
+                cubeMaster.update(delta)
+                renderer.render(cubeMaster.get_current_three_scene(), camera)
+                requestAnimationFrame(render)
+                TWEEN.update()
+            }
+            function build_scenes(outline_json) {
+                console.log(outline_json)
+                const outline = new Outline(outline_json)
+                const flattened_outline = outline.flatten_outline()
+                let stack = [flattened_outline[0]]
+                const main_scene = new MindScene(wh, flattened_outline[0])
+                let scene_stack = [main_scene]
+                unflatten(stack, scene_stack, flattened_outline.slice(1,))
+                cubeMaster = new CubeMaster(wh, main_scene)        
+                scene = cubeMaster.get_current_three_scene()
+            }
+            function unflatten(stack, scene_stack, flattened_outline) {
+                N_stack = stack.length
+                for (let j=0; j<N_stack; j++) {
+                    let current_scene = scene_stack.shift()
+                    let head = stack.shift()
+                    if (current_scene == null)
+                        continue
+                    let N_cards = head.cards.length
+                    for (let i=0; i<N_cards; i++) {
+                        if (head.cards[i] == null)
+                            continue
+                        let element = flattened_outline.shift()
+                        stack.push(element)
+                        let new_scene = element==null ? null : new MindScene(wh, element)
+                        current_scene.scenes.push(new_scene)
+                        scene_stack.push(new_scene)
+                        if (new_scene != null) 
+                            current_scene.addClickBox(i)
+                    } // for (let i=0; i<N_cards; i++) {
+                } // for (let j=0; j<N_stack; j++) {
+                if (flattened_outline.length > 0)
+                    unflatten(stack, scene_stack, flattened_outline)
+            }
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+            function keydown(event) {
+                const camera_radius = 200
+                if (event.key == 'Escape') {
+                    cubeMaster.pop_scene_history()
+                    event.preventDefault()
+                } else if (event.key == ' ') {
+                    if (zoomFactor == 0)
+                        zoomFactor = -wh/2*.85
+                    else
+                        zoomFactor = -zoomFactor
+                    camera.translateZ(zoomFactor)
+                    event.preventDefault()
+                } else if (event.key == 'a') {
+                    tween_camera([camera_radius,0,0])
+                } else if (event.key == 'd') {
+                    tween_camera([-camera_radius,0,0])
+                } else if (event.key == 'w') {
+                    tween_camera([0,0,camera_radius])
+                } else if (event.key == 's') {
+                    tween_camera([0,0,-camera_radius])
+                } else if (event.key == 'e') {
+                    tween_camera([0,-camera_radius,0])
+                } else if (event.key == 'q') {
+                    tween_camera([0,camera_radius,0])
+                }
+            }
+            function mousemove( event ) {
+                mouse.x =   ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+            }
+            function click(event) {
+                cubeMaster.click(event)
+            }
+            function tween_camera(target) {
+                const startPosition = camera.position.clone()
+                const startRotation = camera.rotation.clone()
+                camera.position.set(target[0],target[1],target[2])
+                camera.lookAt(-target[0],-target[1],-target[2])
+                const endPosition = camera.position.clone()
+                const endRotation = camera.rotation.clone()
+                camera.position.set(startPosition.x,startPosition.y,startPosition.z)
+                camera.rotation.set(startRotation.x,startRotation.y,startRotation.z)
+                new TWEEN.Tween( camera.position ).to({x:endPosition.x, y:endPosition.y, z:endPosition.z}, 1500 ).start()
+                new TWEEN.Tween( camera.rotation ).to({x:endRotation.x, y:endRotation.y, z:endRotation.z}, 1500 ).start()
+            }
+            window.onload = init
+            //init()
+            //fittext("resizable")
+        </script>
+    </body>
+</html>

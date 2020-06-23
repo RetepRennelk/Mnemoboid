@@ -1,0 +1,25 @@
+#+Title: Mnemoboid
+
+* In a nutshell
+
+Look at an org-mode outline as a 3D sky-cube from the inside. Mnemoboid builds a
+bridge between an org-mode outline in Emacs and its 3D representation by the way
+of Three.js  in modern browsers. A  cube naturally comprises six  sides and each
+headline is  displayed on one  of the sides. With  more than six  headlines, the
+sides  are  divided  into  tiles  of  size 1x1,  2x2,  or  3x3.  Each  headline,
+subheadline, paragraph  and list item  of the outline  can be complemented  by a
+drawer which holds additional information, i.e., the mnemonic device.
+
+Have your memory palace displayed in front of your eyes!
+
+* What is a Mnemoboid?
+
+Mnemoboid is a  contraction of the words Mnemonic and  Cuboid. A mnemonic device
+aids information  retention. It  helps to  remember. A cuboid  is a  3D-cube. It
+helps  to visualise  information  by  realising the  concept  of a  standardised
+hierarchical memory palace.
+
+* Roadmap
+
+- [ ] Add documentation
+- [ ] Fix known bugs

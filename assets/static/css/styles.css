@@ -1,0 +1,98 @@
+@font-face {
+    font-family: SansForgetica-Regular;
+    src: url(/font/SansForgetica-Regular.otf);
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: red;
+    font-family: 'SansForgetica-Regular';
+}
+section {
+    border: solid 1px black;
+    display: flex;
+    width: 5000px;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+p {
+    margin: 5%;
+    padding: 0;
+    font-size: 100%;
+}
+li {
+    font-size: 100%;
+}
+ul {
+    margin-top: 0;
+}
+img {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image {
+    width: 100%;
+    height:100%;
+}
+.container {
+    margin: 0;
+    padding: 0;
+    border: solid 1px black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.base_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tile_left {
+    background-color: #ff6663;
+}
+.tile_bow {
+    background-color: #feb144;
+}
+.tile_right {
+    background-color: #fdfd97;
+}
+.tile_rear {
+    background-color: #9ee09e;
+}
+.tile_floor {
+    background-color: #9ec1cf;
+}
+.tile_ceiling {
+    background-color: #cc99c9;
+}
+.clickboxside {
+    background-color: ghostwhite;
+    border: 1px solid black;
+}
+#hidden-resizer {
+    visibility: hidden;
+    box-sizing: border-box;
+}
+.resizeable {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.guidance-tile {
+    background-color: white;
+    opacity: .5;
+    backface-visibility: hidden;
+}
