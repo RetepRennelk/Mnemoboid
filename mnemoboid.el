@@ -91,4 +91,9 @@
     (buffer-string)
     (org-export-as 'json)))
 
+(defun mnemoboid-insert-drawer ()
+  (interactive)
+  (evil-org-open-below 0)
+  (org-insert-drawer nil "mnemonic"))
+
 (provide 'mnemoboid)
