@@ -810,7 +810,8 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		event.preventDefault();
+		// Links firing from touchstart event work only _without_ preventDefault
+		// event.preventDefault();
 
 		switch ( event.touches.length ) {
 

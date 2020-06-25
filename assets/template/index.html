@@ -65,6 +65,8 @@
                 add_hidden_resizer(resizer_id)
                 fittext = new Fittext(resizer_id)
                 
+                window.addEventListener("touchstart", click, false);
+
                 controls = new THREE.OrbitControls(camera, renderer.domElement)
                 //controls.addEventListener('change', renderer)
                 controls.minDistance = -1000
@@ -75,7 +77,7 @@
                 window.addEventListener("keydown", keydown, false);
                 window.addEventListener('resize', onWindowResize, false);
                 window.addEventListener("mousemove", mousemove, false);
-                window.addEventListener("click", click, false);
+                //window.addEventListener("click", click, false);
 
                 build_scenes(outline_json)
                 
