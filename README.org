@@ -19,6 +19,26 @@ aids information  retention. It  helps to  remember. A cuboid  is a  3D-cube. It
 helps  to visualise  information  by  realising the  concept  of a  standardised
 hierarchical memory palace.
 
+** Installation
+
+*** Doom Emacs
+
+1. Clone files into ~\~/.doom.d~
+
+~ git clone ~git clone https://github.com/RetepRennelk/mnemoboid.git \~/.doom.d~
+
+2. Configure Emacs
+
+#+BEGIN_SRC emacs-lisp
+(use-package! mnemoboid
+  :load-path "~/.doom.d/mnemoboid")
+#+END_SRC
+
+3. Update Doom Emacs
+
+~doom sync~
+
+
 ** Roadmap
 
 - [ ] Add documentation
