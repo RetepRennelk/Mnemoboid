@@ -661,8 +661,17 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function handleTouchEnd( event ) {
 
-		//console.log( 'handleTouchEnd' );
+		// Added this code to fire links on a Hybrid computer when touch ends
+	
+		let target = event.changedTouches[0].target
 
+		if (target.href) {
+
+			document.location.href = target.href
+
+		}
+
+		//console.log( 'handleTouchEnd:' );
 	}
 
 	//
@@ -810,8 +819,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		// Links firing from touchstart event work only _without_ preventDefault
-		// event.preventDefault();
+		event.preventDefault();
 
 		switch ( event.touches.length ) {
 

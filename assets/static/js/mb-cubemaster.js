@@ -25,6 +25,7 @@ class CubeMaster {
                 if (clickBox.contains(intersects[0].object)) {
                     clickBox.start_clip()
                     saveClickBox = clickBox
+                    break
                 }
             }
         }

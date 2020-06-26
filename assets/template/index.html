@@ -77,8 +77,15 @@
                 window.addEventListener("keydown", keydown, false);
                 window.addEventListener('resize', onWindowResize, false);
                 window.addEventListener("mousemove", mousemove, false);
-                //window.addEventListener("click", click, false);
+                window.addEventListener("click", click, false);
 
+                // For touch on clickBox to work requires setting mouse coordinates
+                // in mousemove followed by running the click routine.
+                window.addEventListener("touchend", event => {
+                    mousemove(event);
+                    click(event);
+                }, false);
+                
                 build_scenes(outline_json)
                 
                 render()
@@ -157,8 +164,13 @@
                 }
             }
             function mousemove( event ) {
-                mouse.x =   ( event.clientX / window.innerWidth ) * 2 - 1;
-                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                if (event.changedTouches) {
+                    mouse.x =   ( event.changedTouches[0].clientX / window.innerWidth ) * 2 - 1;
+                    mouse.y = - ( event.changedTouches[0].clientY / window.innerHeight ) * 2 + 1;
+                } else {
+                    mouse.x =   ( event.clientX / window.innerWidth ) * 2 - 1;
+                    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                }
             }
             function click(event) {
                 cubeMaster.click(event)
