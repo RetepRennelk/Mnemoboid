@@ -24,6 +24,8 @@
         <script src="/js/mb-cubemaster.js"></script>
         <script src="/js/mb-clickbox.js"></script>
         <script src="/js/tween.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
     </head>
     <body>
         <script>
@@ -85,6 +87,19 @@
                     mousemove(event);
                     click(event);
                 }, false);
+
+                // On mobile use double tap to return from deeper hierarchy levels
+                let body = document.querySelector('body');
+                let manager = new Hammer.Manager(body);
+                let DoubleTap = new Hammer.Tap({
+                    event: 'doubletap',
+                    taps: 2,
+                    posThreshold: 100 // Setting posThreshold to 100 detects large fingers more reliably
+                });
+                manager.add(DoubleTap);
+                manager.on('doubletap', function(e) {
+                    cubeMaster.pop_scene_history()
+                });
                 
                 build_scenes(outline_json)
                 
@@ -139,7 +154,7 @@
             }
             function keydown(event) {
                 const camera_radius = 200
-                if (event.key == 'Escape') {
+                if (event.key == 'Escape' || event.key == 'Backspace') {
                     cubeMaster.pop_scene_history()
                     event.preventDefault()
                 } else if (event.key == ' ') {
