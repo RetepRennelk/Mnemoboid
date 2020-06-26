@@ -23,18 +23,18 @@ hierarchical memory palace.
 
 *** Doom Emacs
 
-- Clone files into ~~/.doom.d~ with
+- Clone files into =~/.doom.d= with
 
-~git clone ~git clone https://github.com/RetepRennelk/mnemoboid.git ~/.doom.d~
+=git clone https://github.com/RetepRennelk/mnemoboid.git ~/.doom.d=
 
-- Configure Emacs
+- Configure Emacs by adding the following to =config.el=
 
 #+BEGIN_SRC emacs-lisp
 (use-package! mnemoboid
   :load-path "~/.doom.d/mnemoboid")
 #+END_SRC
 
-- Update Doom Emacs with ~doom sync~
++ Finally update Doom Emacs with =doom sync=
 
 ** Roadmap
 
