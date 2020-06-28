@@ -45,11 +45,12 @@ Forgetica]].
 
 [[file:doc/gif/basic-usage.gif]]
 
-Within the browser hold the left mouse button and use the mouse to look at all
+Within the browser hold  the left mouse button and use the mouse  to look at all
 sides. Use the mouse wheel to zoom in and out. Alternatively use the keyboard to
-look at all sides (A=left / W=forward / D=right / S=backward / Q=down / E=up).
-The will run a tween animation to the selected target from the current location.
-The Space key will zoom forward and backwards from the current position.
+look at all sides  (A=left / W=forward / D=right / S=backward  / Q=down / E=up).
+This will run  a tween animation moving  the camera to the  selected target from
+the current  location. The Space key  will zoom forwards and  backwards from the
+current position.
 
 ** Roadmap
 
