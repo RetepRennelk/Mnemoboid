@@ -1,0 +1,37 @@
+#+Title: Superhero Abilities
+:mnemonic:
+- level 1 :: alphabet shape system
+- level 2 :: number rhyme system
+:END:
+
+* Superman
+** Can Fly
+** Bullet proof
+** Heat vision
+** Ray Vision
+** Freeze breath
+** Fast
+* Batman
+** Actually none
+** Deep voice
+** Rich
+** Shark-repellent
+* Wolverine
+** Superhealing
+** Claws
+** Adamantium Skeleton
+** Supersmell
+* Spiderman
+** Agility
+** Webshooting
+** Spideysense
+* Captain America
+** Supersoldier serum
+** Longevity
+* Iron-Man
+** Genius
+** Owns plane with dancing pole
+** Playboy
+** Iron-Will
+** Quipping
+** Inventiveness

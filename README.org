@@ -70,6 +70,15 @@ left of the mnemonic text. Multiple images will share a tile.
 
 [[file:doc/gif/advanced-usage-2.gif]]
 
+** Advanced Usage 3
+
+Subheadlines under headlines are represented as tiny white boxes on a tile. This
+function just like  portals. They can be touched or  clicked. The ideal solution
+would have been to dolly into these  boxes. The CSS3DRenderer does not allow for
+that. Instead it is the user's responsibility to keep the track mapping.
+
+[[file:doc/gif/advanced-usage-3.gif]]
+
 ** Roadmap
 
 - [ ] Add documentation
