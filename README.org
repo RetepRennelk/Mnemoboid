@@ -36,6 +36,14 @@ hierarchical memory palace.
 
 + Finally update Doom Emacs with =doom sync=
 
+** Basic Usage
+
+Create an  org-mode file  and from within  its buffer  call =mnemoboid-browser=.
+This will  open the  system's default  browser to a  website hosted  from within
+Emacs.
+
+[[file:doc/gif/basic-usage.gif]]
+
 ** Roadmap
 
 - [ ] Add documentation
