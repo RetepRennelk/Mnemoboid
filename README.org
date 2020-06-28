@@ -52,6 +52,16 @@ This will run  a tween animation moving  the camera to the  selected target from
 the current  location. The Space key  will zoom forwards and  backwards from the
 current position.
 
+** Advanced Usage 1
+
+To   each   headline   a   =mnemonic=-drawer    can   be   added   by   invoking
+=mnemoboid-insert-drawer=. The  drawer can  contain paragraphs,  unordered lists
+and images. If  a mnemonic-drawer is present in the  org-outline, the respective
+side (and later tile) in the browser will be split vertically in two halves. The
+headline appears in the upper halve, the mnemonic helper in the lower halve.
+
+file:doc/gif/advanced-usage-1.gif
+
 ** Roadmap
 
 - [ ] Add documentation
