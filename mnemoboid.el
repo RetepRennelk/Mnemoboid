@@ -38,6 +38,7 @@
   (let* ((full-filename (buffer-file-name))
          (filename (file-name-nondirectory full-filename))
          (addr (format "http://localhost:%s/mnemoboid/%s" mnemoboid-port filename)))
+    (save-buffer)
     (setq mnemoboid-default-directory default-directory)
     (elnode-start 'mnemoboid-root-handler :port mnemoboid-port :host "0.0.0.0")
     (browse-url addr)))
