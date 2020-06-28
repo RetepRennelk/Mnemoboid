@@ -62,6 +62,14 @@ headline appears in the upper halve, the mnemonic helper in the lower halve.
 
 [[file:doc/gif/advanced-usage-1.gif]]
 
+** Advanced Usage 2
+
+First off, apologies if the artwork hurts the  eyes. Put a link to an image file
+into the mnemonic-drawer and the image will be shown in the mnemonic tile to the
+left of the mnemonic text. Multiple images will share a tile.
+
+[[file:doc/gif/advanced-usage-2.gif]]
+
 ** Roadmap
 
 - [ ] Add documentation

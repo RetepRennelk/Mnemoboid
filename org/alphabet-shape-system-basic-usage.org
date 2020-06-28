@@ -1,0 +1,11 @@
+#+Title: Alphabet Shape System
+:mnemonic:
+- level 1 :: link character to physical item
+:END:
+
+* A
+* B
+* C
+* D
+* E
+* F

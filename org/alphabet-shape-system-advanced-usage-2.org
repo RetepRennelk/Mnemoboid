@@ -1,0 +1,40 @@
+#+Title: Alphabet Shape System
+:mnemonic:
+- level 1 :: link character to physical item
+:END:
+
+* A
+:mnemonic:
+Ladder
+file:./img/ladder.png
+:END:
+
+* B
+:mnemonic:
+Glasses
+file:./img/glasses.png
+:END:
+
+* C
+:mnemonic:
+Banana
+file:./img/banana.png
+:END:
+
+* D
+:mnemonic:
+Tongue
+file:./img/tongue.png
+:END:
+
+* E
+:mnemonic:
+Comb
+file:./img/comb.png
+:END:
+
+* F
+:mnemonic:
+Toothbrush
+file:./img/toothbrush.png
+:END:
