@@ -60,7 +60,7 @@ and images. If  a mnemonic-drawer is present in the  org-outline, the respective
 side (and later tile) in the browser will be split vertically in two halves. The
 headline appears in the upper halve, the mnemonic helper in the lower halve.
 
-file:doc/gif/advanced-usage-1.gif
+[[file:doc/gif/advanced-usage-1.gif]]
 
 ** Roadmap
 
