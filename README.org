@@ -38,17 +38,18 @@ hierarchical memory palace.
 
 ** Basic Usage
 
-Create an  org-mode file  and from within  its buffer  call =mnemoboid-browse=.
-This will  open the  system's default  browser to a  website hosted  from within
-Emacs.
+Create an org-mode file and from within its buffer call =mnemoboid-browse=. This
+will open the system's default browser to a website hosted from within Emacs.
+Please note that for the sake of forcing recall the font for the browser is [[https://sansforgetica.rmit][Sans
+Forgetica]].
 
 [[file:doc/gif/basic-usage.gif]]
 
-Within the browser use the mouse to look at all sides. Alternatively use the
-keys A/W/D/S/Q/E to look left/forward/right/backward/down/up. The will run a
-tween animation to the selected target from the current location. The Space key
-will zoom forward and backwards from the current position. Use the mouse wheel
-to zoom in and out.
+Within the browser hold the left mouse button and use the mouse to look at all
+sides. Use the mouse wheel to zoom in and out. Alternatively use the keyboard to
+look at all sides (A=left / W=forward / D=right / S=backward / Q=down / E=up).
+The will run a tween animation to the selected target from the current location.
+The Space key will zoom forward and backwards from the current position.
 
 ** Roadmap
 
