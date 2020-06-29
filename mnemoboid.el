@@ -63,10 +63,19 @@
       on httpcon
       do
       (elnode-send-file httpcon file)))
+
+(defun mnemoboid-assets-img-handler (httpcon)
+  (elnode-docroot-for (concat mnemoboid-default-directory "assets/img")
+      with file
+      on httpcon
+      do
+      (elnode-send-file httpcon file)))
+
 ;;; The sequence of the routes are important.
 ;;; Don't arbitrarly change them.
 (defvar mnemoboid-routes
-  '(("mnemoboid/img/\\(.*\\)" . mnemoboid-img-handler)
+  '(("/mnemoboid/assets/img/\\(.*\\)" . mnemoboid-assets-img-handler)
+    ("mnemoboid/img/\\(.*\\)" . mnemoboid-img-handler)
     ("mnemoboid/\\(.*\\)" . mnemoboid-endpoint)
     ("/\\(.*\\)" . mnemoboid-file-handler)))
 
