@@ -19,6 +19,24 @@ aids information  retention. It  helps to  remember. A cuboid  is a  3D-cube. It
 helps  to visualise  information  by  realising the  concept  of a  standardised
 hierarchical memory palace.
 
+** Origin
+
+The  idea of  using an  artificial room  for memorisation  may be  attributed to
+Gregor von Feinagle  (cf. [[https://books.google.de/books?id=i6LMvgEACAAJ&dq=ernest+wood+memory+and+mind+training&hl=de&sa=X&ved=2ahUKEwjn06ykzqfqAhVNR5oKHU8tAY0Q6AEwAHoECAAQAQ][Mind and Memory and Training]]  by Ernest Wood). Dominic
+O'Brien refers to it as Roman Room method.
+
+** Pros and Cons
+
+The main  advantage of this software  is the ease  with which an outline  can be
+visualized as a three-dimensional structure. Plus adding mnemonic drawers forces
+the  author  to  connect  with  the source  material  and  to  craft  meaningful
+connections.
+
+The  main disadvantage  is that  the 3D-rendition  is extremely  simplistic, and
+lacks for example all the finesse of modern 3D-games. That is of course a design
+choice, in that drafting the org-line comes first and visualizing the outline is
+meant for the recall and retention stage of the whole note-taking process.
+
 ** Installation
 
 *** Doom Emacs
@@ -52,7 +70,7 @@ This will run  a tween animation moving  the camera to the  selected target from
 the current  location. The Space key  will zoom forwards and  backwards from the
 current position.
 
-** Advanced Usage 1
+** Advanced Usage 1 - Adding Mnemonic Drawers
 
 To   each   headline   a   =mnemonic=-drawer    can   be   added   by   invoking
 =mnemoboid-insert-drawer=. The  drawer can  contain paragraphs,  unordered lists
@@ -62,7 +80,7 @@ headline appears in the upper halve, the mnemonic helper in the lower halve.
 
 [[file:doc/gif/advanced-usage-1.gif]]
 
-** Advanced Usage 2
+** Advanced Usage 2 - Adding Mnemonic Drawers with Images
 
 First off, apologies if the artwork hurts the  eyes. Put a link to an image file
 into the mnemonic-drawer and the image will be shown in the mnemonic tile to the
@@ -70,7 +88,7 @@ left of the mnemonic text. Multiple images will share a tile.
 
 [[file:doc/gif/advanced-usage-2.gif]]
 
-** Advanced Usage 3
+** Advanced Usage 3 - A hierarchy of cubes
 
 Subheadlines under headlines are represented as tiny white boxes on a tile. They
 function  just like  portals, and  they  can be  touched or  clicked. The  ideal
