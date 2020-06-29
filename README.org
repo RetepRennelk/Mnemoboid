@@ -90,11 +90,19 @@ left of the mnemonic text. Multiple images will share a tile.
 
 ** Advanced Usage 3 - A hierarchy of cubes
 
-Subheadlines under headlines are represented as tiny white boxes on a tile. They
-function  just like  portals, and  they  can be  touched or  clicked. The  ideal
-solution would have  been to dolly into these boxes.  The CSS3DRenderer does not
-allow  for that.  Instead it  is  the user's  responsibility to  keep the  track
-mapping.
+All main headlines are shown in  the main cube when invoking =mnemoboid-browse=.
+If subheadlines  are present,  then they  are not  immediately shown.  But their
+presence is  hinted at  by the  presence of tiny  white cubes  on a  tile. These
+function  just like  portals. The  mouse pointer  hovering over  them starts  an
+animation. On  touching or clicking  such a tiny  white cube, the  current scene
+will be replaced  by the content of the selected  tile/headline. Pressing Escape
+or Backspace returns to the previous hierarchy level.
+
+The scene change  is abrupt and as  such it is a compromise.  The ideal solution
+would have been to dolly into these  boxes. The CSS3DRenderer does not allow for
+that. The  key benefit, though,  of the CSS3DRenderer  is the ability  to easily
+scale font size. As a consequence the user is partly responsible for keeping the
+mind's eye on track as to which cube and headline currently is displayed.
 
 [[file:doc/gif/advanced-usage-3.gif]]
 
