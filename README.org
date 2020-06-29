@@ -10,7 +10,7 @@ sides  are  divided  into  tiles  of  size 1x1,  2x2,  or  3x3.  Each  headline,
 subheadline, paragraph  and list item  of the outline  can be complemented  by a
 drawer which holds additional information, i.e., the mnemonic device.
 
-Have your memory palace displayed in front of your eyes!
+Have your memory palace displayed in front of your eyes ... with ease!
 
 ** What is a Mnemoboid?
 
@@ -22,7 +22,7 @@ hierarchical memory palace.
 ** Origin
 
 The  idea of  using an  artificial room  for memorisation  may be  attributed to
-Gregor von Feinagle  (cf. [[https://books.google.de/books?id=i6LMvgEACAAJ&dq=ernest+wood+memory+and+mind+training&hl=de&sa=X&ved=2ahUKEwjn06ykzqfqAhVNR5oKHU8tAY0Q6AEwAHoECAAQAQ][Mind and Memory and Training]]  by Ernest Wood). Dominic
+Gregor von Feinaigle  (cf. [[https://books.google.de/books?id=i6LMvgEACAAJ&dq=ernest+wood+memory+and+mind+training&hl=de&sa=X&ved=2ahUKEwjn06ykzqfqAhVNR5oKHU8tAY0Q6AEwAHoECAAQAQ][Mind and Memory and Training]]  by Ernest Wood). Dominic
 O'Brien refers to it as Roman Room method.
 
 ** Pros and Cons
