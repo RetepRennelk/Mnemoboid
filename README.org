@@ -106,6 +106,20 @@ mind's eye on track as to which cube and headline currently is displayed.
 
 [[file:doc/gif/advanced-usage-3.gif]]
 
+** Limitations
+
+The hierarchy depth of an org-outline which  can be represented is limited to 2,
+i.e., a headlines  can contain subheadlines (and paragraphs  and unordered lists
+and images),  but subheadlines are  limited to contain paragraphs  and unordered
+lists and images. In other words, subheadlines cannot contain sub-subheadlines.
+
+This  choice was  made  deliberately. Each  hierarchy level  is  connected to  a
+journey, or  a story. The  effort to work  out connecting mnemonics  between the
+hierarchy levels is felt too heavy.
+
+Furthermore, the maximum number of items on given hierarchy level is 54, i.e., 9
+tiles on each of the 6 sides of a cube.
+
 ** Roadmap
 
 - [ ] Add documentation
