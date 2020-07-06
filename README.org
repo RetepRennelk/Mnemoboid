@@ -117,7 +117,7 @@ This  choice was  made  deliberately. Each  hierarchy level  is  connected to  a
 journey, or  a story. The  effort to work  out connecting mnemonics  between the
 hierarchy levels is felt too heavy.
 
-Furthermore,  the  maximum number  of  items  on  given  hierarchy level  is  54
+Furthermore,  the maximum  number of  items  on a  given hierarchy  level is  54
 resulting from 9 tiles on each of the 6 sides of a cube.
 
 ** Roadmap
