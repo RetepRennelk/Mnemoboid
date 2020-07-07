@@ -390,7 +390,10 @@ class BodyParser {
         const N_cards = state_tmp.cards.length
         for (let i=0; i<N_cards; i++) {
             const new_card_part = state_tmp.cards[i].content
-            Outline.last_card.amend_mnemonic(new_card_part)
+            if (state.cards.length > 0)
+                state.cards[state.cards.length-1].amend_mnemonic(new_card_part)
+            else 
+                Outline.last_card.amend_mnemonic(new_card_part)
         }
         state.last_post_blank = item.properties["post-blank"]
         return state
